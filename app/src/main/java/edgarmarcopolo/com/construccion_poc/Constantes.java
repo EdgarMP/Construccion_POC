@@ -40,6 +40,7 @@ public class Constantes {
     public static final String PREGUNTA_SPINNER = "Spinner";
     public static final String PREGUNTA_SENCILLA_TEXT = "SencillaTexto";
 
+
     //Volley
     public  static final int TIMEOUT_MILLISEC = 20000;
 
