@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FEFEFE"
+            android:layout_gravity="center_vertical"
+            android:layout_weight=".8"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/pregunta_multiple_subseccion"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:text="Subseccion"
+                android:textColor="#AAAAAA"/>
+
+            <TextView
+                android:id="@+id/pregunta_multiple_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:textSize="16sp"
+                android:text="Pregunta"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/pregunta_multiple_foto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/camera_icon"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/pregunta_multiple_respuestas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <View
+    android:layout_width="fill_parent"
+    android:layout_height="2dp"
+    android:background="#c0c0c0"/>
+
+
+</LinearLayout>

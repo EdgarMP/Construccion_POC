@@ -1,0 +1,8 @@
+{ "encuesta_id":1,
+  "lista_preguntas":
+                  [{"pregunta_id":92, "tipo_pregunta":"multiple", "pregunta_texto": "Levantamiento Físico de Terreno1","respuestas":["Rechazado", "Por Corregir", "Aceptable", "No Aplica"]},
+                   {"pregunta_id":93, "tipo_pregunta":"multiple", "pregunta_texto": "Identificar Afectaciones","respuestas":["Rechazado", "Por Corregir", "Aceptable", "No Aplica"]},
+                   {"pregunta_id":94, "tipo_pregunta":"multiple", "pregunta_texto": "Identificar Interferencias","respuestas":["Rechazado", "Por Corregir", "Aceptable", "No Aplica"]},
+                   {"pregunta_id":95, "tipo_pregunta":"multiple", "pregunta_texto": "Consideraciones Especiales","respuestas":["Rechazado", "Por Corregir", "Aceptable", "No Aplica"]},
+                   {"pregunta_id":96, "tipo_pregunta":"multiple", "pregunta_texto": "Verificar Alineamiento","respuestas":["Rechazado", "Por Corregir", "Aceptable", "No Aplica"]}
+                 ]}

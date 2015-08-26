@@ -1,0 +1,6 @@
+{"lista_encuestas": 
+         [{"encuesta_id":1, "nombre_encuesta": "Evaluación de calidad"},
+          {"encuesta_id":2, "nombre_encuesta": "Auditoría Estructural"},
+          {"encuesta_id":3, "nombre_encuesta": "Reporte de tiendas, rojas y amarillas"},
+          {"encuesta_id":4, "nombre_encuesta": "Checklist de supervisión de obra"}]
+}
