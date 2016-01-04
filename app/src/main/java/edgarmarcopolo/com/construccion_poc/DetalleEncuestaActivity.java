@@ -165,7 +165,6 @@ public class DetalleEncuestaActivity extends Activity {
         }
 
         if(mFileExist){
-            //Alert Dialog
             new AlertDialog.Builder(this)
                     .setTitle("Encuesta Encontrada")
                     .setMessage("Se ha encontrado una encuesta existente. Deseas recuperarla?")
@@ -183,18 +182,15 @@ public class DetalleEncuestaActivity extends Activity {
                     .setIcon(android.R.drawable.ic_dialog_alert)
                     .show();
         }else{
-            getPreguntas(); //loadJSONFromAsset();
+            getPreguntas();
         }
 
         mEnviarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Hacer un HttpPost!
                 mLocationManager.removeUpdates(mLocationListener);
                 UploadFilesTask uploadFilesTask = new UploadFilesTask(DetalleEncuestaActivity.this);
                 uploadFilesTask.execute();
-
-
             }
         });
     }
@@ -362,7 +358,6 @@ public class DetalleEncuestaActivity extends Activity {
 
                             if (rb.isChecked()) {
                                 guardaArchivo = true;
-                                //Log.w("Respuestas Radios: ", rb.getText().toString());
                                 String line = "preguntaId=" + pmv.getRadioGroup().getId() + ",respuestaTexto=" + rb.getText().toString() + "-";
                                 Log.w("Write", line);
                                 fos.write(line.getBytes());
@@ -643,6 +638,11 @@ public class DetalleEncuestaActivity extends Activity {
                             try {
 
                                 preguntacontestada.put("respuesta_id", rb.getId()-pmv.getRadioGroup().getId());
+                                int x = rb.getId()-pmv.getRadioGroup().getId();
+                                Log.wtf("rb.getId", ""+rb.getId());
+                                Log.wtf("pmv.getRadioGroup.getId()", ""+pmv.getRadioGroup().getId());
+                                Log.wtf("RespuestaID", ""+x);
+
                                 preguntacontestada.put("pregunta_id", pmv.getRadioGroup().getId());
                                 preguntacontestada.put("pregunta_tipo", preguntaMultiple.getPreguntaTipo());
                             } catch (JSONException e) {

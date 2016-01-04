@@ -52,4 +52,9 @@ public class LoginActivity extends ActionBarActivity {
 
     }
 
+    public void forceCrash(View view) {
+        throw new RuntimeException("This is a crash");
+    }
+
+
 }

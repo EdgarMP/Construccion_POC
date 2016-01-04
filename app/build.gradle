@@ -1,15 +1,30 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion "22.0.0"
 
     defaultConfig {
         applicationId "edgarmarcopolo.com.construccion_poc"
         minSdkVersion 16
-        targetSdkVersion 21
-        versionCode 3
-        versionName "1.2"
+        targetSdkVersion 22
+        versionCode 5
+        versionName "1.4"
     }
     buildTypes {
         release {
@@ -26,4 +41,7 @@ dependencies {
     compile files('libs/httpmime-4.2.5.jar')
     compile files('libs/apache-mime4j-core-0.7.2.jar')
     compile 'com.android.support:appcompat-v7:22.0.0'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.3@aar') {
+        transitive = true;
+    }
 }

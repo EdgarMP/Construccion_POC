@@ -69,7 +69,7 @@ public class IdentificadorTiendaActivity extends Activity {
                 }else{
                     if(mLocationManager!=null){
                         if(mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-                            if((mLatitude != 0.0 && mLongitude != 0.0) && mAccuracy < Constantes.STRONG_ACCURACY){
+//                            if((mLatitude != 0.0 && mLongitude != 0.0) && mAccuracy < Constantes.STRONG_ACCURACY){
 
 
                                 Intent intentIdTienda = new Intent(IdentificadorTiendaActivity.this, EncuestasActivity.class);
@@ -88,9 +88,9 @@ public class IdentificadorTiendaActivity extends Activity {
 
                                 startActivity(intentIdTienda);
 
-                            }else{
-                                Toast.makeText(IdentificadorTiendaActivity.this, "La señal del GPS es muy débil", Toast.LENGTH_SHORT).show();
-                            }
+//                            }else{
+//                                Toast.makeText(IdentificadorTiendaActivity.this, "La señal del GPS es muy débil", Toast.LENGTH_SHORT).show();
+//                            }
                         }else{
                             mAppUtils.showGPSDialog(IdentificadorTiendaActivity.this, IdentificadorTiendaActivity.class);
                         }

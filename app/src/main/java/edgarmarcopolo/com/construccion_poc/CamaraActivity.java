@@ -39,7 +39,15 @@ public class CamaraActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate");
         setContentView(R.layout.activity_camara);
+
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        Log.d(TAG, "onStart");
 
         mPrefs = getSharedPreferences(Constantes.MY_PREFS_NAME, MODE_PRIVATE);
         mPreguntaId = getIntent().getIntExtra("preguntaId",0);
@@ -49,7 +57,7 @@ public class CamaraActivity extends Activity {
         mEncuesta = new Encuesta();
         mEncuesta = b.getParcelable("encuesta_a_mostrar");
 
-        Log.v("Pregunta ID", ""+mPreguntaId);
+        Log.v("Pregunta ID", "" + mPreguntaId);
 
         // Create an instance of Camera
         mCamera = getCameraInstance();
@@ -65,36 +73,39 @@ public class CamaraActivity extends Activity {
                     });
             AlertDialog alert = builder.create();
             alert.show();
-        }
+        }else{
 
-        Camera.Parameters params = mCamera.getParameters();
-        List<Camera.Size> listSizes = mCamera.getParameters().getSupportedPictureSizes();
+            Camera.Parameters params = mCamera.getParameters();
+            List<Camera.Size> listSizes = mCamera.getParameters().getSupportedPictureSizes();
 
-        int posicionTamano = (listSizes.size()/2)/2;
-        Camera.Size size = listSizes.get(posicionTamano);
-        params.setPictureSize(size.width, size.height);
-        mCamera.setParameters(params);
-        for(int i=0; i<listSizes.size(); i++){
-            Log.v("Lista de Tamano:", ""+listSizes.get(i).height+" x "+listSizes.get(i).width);
-        }
-        Log.v("Tamano", ""+size.height+" X "+size.width);
+            int posicionTamano = (listSizes.size()/2)/2;
+            Camera.Size size = listSizes.get(posicionTamano);
+            params.setPictureSize(size.width, size.height);
+            mCamera.setParameters(params);
+//            for(int i=0; i<listSizes.size(); i++){
+//                Log.v("Lista de Tamano:", ""+listSizes.get(i).height+" x "+listSizes.get(i).width);
+//            }
+//            Log.v("Tamano", ""+size.height+" X "+size.width);
 
-        // Add a listener to the Capture button
-        captureButton = (Button) findViewById(R.id.button_capture);
-        captureButton.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // get an image from the camera
-                        mCamera.takePicture(null, null, mPicture);
+            // Add a listener to the Capture button
+            captureButton = (Button) findViewById(R.id.button_capture);
+            captureButton.setOnClickListener(
+                    new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // get an image from the camera
+                            mCamera.takePicture(null, null, mPicture);
+                        }
                     }
-                }
-        );
+            );
 
-        // Create our Preview view and set it as the content of our activity.
-        mPreview = new CameraPreview(this, mCamera);
-        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
-        preview.addView(mPreview);
+            // Create our Preview view and set it as the content of our activity.
+            Log.v(TAG, "Calling Constructor CameraPreview");
+            mPreview = new CameraPreview(this, mCamera);
+            FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+            preview.addView(mPreview);
+
+        }
     }
 
     /** A safe way to get an instance of the Camera object. */
@@ -226,7 +237,7 @@ public class CamaraActivity extends Activity {
     @Override
     public void onStop(){
         super.onStop();
-
+        Log.d(TAG,"onStop");
         mCamera.stopPreview();
         mPreview.getHolder().removeCallback(mPreview);
         mCamera.release();

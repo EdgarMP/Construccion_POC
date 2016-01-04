@@ -26,12 +26,18 @@ public class Constantes {
 
 
     //Servlets
-    public static final String DATA_SERVLET = "http://cupones.oxxo.com/EncuestasApp/DatosServlet"; //http://192.168.1.216:8080/AppConsutruccion/DatosServlet"
+    //public static final String DATA_SERVLET = "http://cupones.oxxo.com/EncuestasApp/DatosServlet"; //http://192.168.1.216:8080/AppConsutruccion/DatosServlet"
+    public static final String DATA_SERVLET = "http://fcpocweb.cloudapp.net/AppConsutruccion/DatosServlet";
     //public static final String IMAGES_SERVLET = "http://192.168.43.160:8080/AppConsutruccion/GetPictureFromClient";
-    public static final String IMAGES_SERVLET = "http://cupones.oxxo.com/EncuestasApp/GetPictureFromClient";
-    public static final String ENCUESTAS_SERVLET = "http://cupones.oxxo.com/EncuestasApp/EncuestasServlet";
+    //public static final String IMAGES_SERVLET = "http://cupones.oxxo.com/EncuestasApp/GetPictureFromClient";
+    public static final String IMAGES_SERVLET = "http://fcpocweb.cloudapp.net/AppConsutruccion/GetPictureFromClient";
+    //public static final String ENCUESTAS_SERVLET = "http://cupones.oxxo.com/EncuestasApp/EncuestasServlet";
+
+    public static final String ENCUESTAS_SERVLET = "http://fcpocweb.cloudapp.net/AppConsutruccion/EncuestasServlet";
     //public static final String ENCUESTAS_SERVLET = "http://yourjson.com/yj/serv/203";
-    public static final String PREGUNTAS_SERVLET = "http://cupones.oxxo.com/EncuestasApp/PreguntasServlet?encid="; //http://192.168.1.166/AppConstruccion/PreguntaServlet?encid="+mEncuesta
+    //public static final String PREGUNTAS_SERVLET = "http://cupones.oxxo.com/EncuestasApp/PreguntasServlet?encid="; //http://192.168.1.166/AppConstruccion/PreguntaServlet?encid="+mEncuesta
+    public static final String PREGUNTAS_SERVLET = "http://fcpocweb.cloudapp.net/AppConsutruccion/PreguntasServlet?encid=";
+
 
     //Preguntas
     public static final String PREGUNTA_RADIO_BUTTON = "RadioButton";
